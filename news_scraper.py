@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python
 
 from requests import get
 from requests.exceptions import RequestException
@@ -17,7 +17,7 @@ def GET(url):
             else:
                 return None
     except RequestException as err:
-        print('Error during requests to {0} : {1}'.format(url, str(e)))
+        print('Error during requests to {0} : {1}'.format(url, str(err)))
 
 def HTTP_200(response):
     content_type = response.headers['Content-Type'].lower()
